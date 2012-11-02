@@ -4,6 +4,10 @@ This is a blueprint to define [markdown][] ( see more in [markdown-wiki][] and [
 
 It focus on simple and easy resolution. If you want complicated draw, then you could use an external tool to generate it for you.
 
+Who define the Rule?
+--------------------
+I'm [Yarco][yarco], an anonymous and invisible man. But you could also join and feel free to edit.
+
 Common
 ------
 All charts are defined just like you are writting normal code. For example:
@@ -49,6 +53,7 @@ There could be some enhanced features in future:
 * external png? embed svg?
 
 
+[yarco]:http://bbish.net
 
 [markdown]:http://daringfireball.net/projects/markdown/ "original markdown"
 [markdown-wiki]:http://en.wikipedia.org/wiki/Markdown "markdown wikimedia intro"
