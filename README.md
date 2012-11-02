@@ -29,6 +29,7 @@ Currently this blueprint only defines the following chart:
 * usecase
 * activity
 * class
+* object
 
 Usecase
 -------
@@ -88,6 +89,20 @@ class definition here is not exactly the same as in [class in wikimedia][]. It o
 
 ![class example]
 
+Object
+------
+object only contains attributes you want to use. (then it can also describe table).
+
+		```uml-object
+		name | attributes
+		-----|--------------
+		person | id | name | roles
+		user | id | name | roles | ctime
+		```
+
+should have:
+
+![object example]
 
 
 
@@ -103,3 +118,4 @@ class definition here is not exactly the same as in [class in wikimedia][]. It o
 [usecase example]:https://raw.github.com/yarcowang/mdchart/master/usecase.png "usecase example"
 [activity example]:https://raw.github.com/yarcowang/mdchart/master/activity.png "activity example"
 [class example]:https://raw.github.com/yarcowang/mdchart/master/class.png "class example"
+[object example]:https://raw.github.com/yarcowang/mdchart/master/object.png "object example"
