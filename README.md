@@ -39,6 +39,7 @@ The syntax is as following, just like writting a table:
 		```
 		
 should generate:
+
 ![usecase example]
 
 There could be some enhanced features in future:
