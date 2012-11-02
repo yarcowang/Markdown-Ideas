@@ -27,6 +27,7 @@ This is the way you write embed chart.
 Currently this blueprint only defines the following chart:
 
 * usecase
+* activity
 
 Usecase
 -------
@@ -52,6 +53,28 @@ There could be some enhanced features in future:
 * add color generating
 * external png? embed svg?
 
+Activity
+--------
+see more [activity in wikimedia][].
+
+The syntax is as following:
+
+		```uml-activity
+		title | condition | false goto
+		------|-----------|-----------
+		begin admin: | user logined? | login
+		manage news |
+		login: | pass login? | error page
+		manage news |
+		error page: |
+		```
+		
+should generate:
+
+![activity example]
+
+Can be enhanced also.
+
 
 [yarco]:http://bbish.net
 
@@ -60,4 +83,6 @@ There could be some enhanced features in future:
 [markdown-github]:http://github.github.com/github-flavored-markdown/
 
 [usecase in wikimedia]:http://en.wikipedia.org/wiki/Use_Case_Diagram "usecase in wikimedia"
+[activity in wikimedia]:http://en.wikipedia.org/wiki/Activity_diagram "activity in wikimedia"
 [usecase example]:https://raw.github.com/yarcowang/mdchart/master/usecase.png "usecase example"
+[activity example]:https://raw.github.com/yarcowang/mdchart/master/activity.png "activity example"
