@@ -28,6 +28,7 @@ Currently this blueprint only defines the following chart:
 
 * usecase
 * activity
+* class
 
 Usecase
 -------
@@ -73,7 +74,21 @@ should generate:
 
 ![activity example]
 
-Can be enhanced also.
+Can be enhanced also. (arrow needed)
+
+Class
+-----
+class definition here is not exactly the same as in [class in wikimedia][]. It only describes generalization.
+
+		```uml-class
+		parent | sons
+		-------|-----------
+		person: | admin | user | guest
+		```
+
+![class example]
+
+
 
 
 [yarco]:http://bbish.net
@@ -84,5 +99,7 @@ Can be enhanced also.
 
 [usecase in wikimedia]:http://en.wikipedia.org/wiki/Use_Case_Diagram "usecase in wikimedia"
 [activity in wikimedia]:http://en.wikipedia.org/wiki/Activity_diagram "activity in wikimedia"
+[class in wikimedia]:http://en.wikipedia.org/wiki/Class_diagram "class in wikimedia"
 [usecase example]:https://raw.github.com/yarcowang/mdchart/master/usecase.png "usecase example"
 [activity example]:https://raw.github.com/yarcowang/mdchart/master/activity.png "activity example"
+[class example]:https://raw.github.com/yarcowang/mdchart/master/class.png "class example"
