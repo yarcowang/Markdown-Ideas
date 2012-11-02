@@ -100,9 +100,11 @@ object only contains attributes you want to use. (then it can also describe tabl
 		user | id | name | roles | ctime
 		```
 
-should have:
+should result:
 
 ![object example]
+
+You could also use *-name* or *+name* sytax here.
 
 
 
