@@ -46,7 +46,7 @@ There could be some enhanced features in future:
 
 * action merge, some action could be merged into one. 
 * add color generating
-
+* external png? embed svg?
 
 
 
