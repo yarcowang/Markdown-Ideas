@@ -146,11 +146,11 @@ For example:
 
 You can reference the image in markdown as:
 
-    ![image1](data:with/messagepack,"image1")
+    ![image1](data:with/messagepack;base64,ImltYWdlMSI=) ---- default section, the first messagepack data, "image1"
 
 or
 
-    ![image1](data:with/messagepack,Avatar:"image1")
+    ![image1](data:with/messagepack;base64,QXZhdGFyOiJpbWFnZTEi) ---- Avatar:"image1"
 
 
 [Markdown]:http://daringfireball.net/projects/markdown/ "original markdown"
