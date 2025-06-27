@@ -129,24 +129,20 @@ If the requirement is we want a all-in-one solution, the data url solution is me
 
 The basic format is:
 
-    ```
     ... Here is the Text (Markdown in this case) ...
     \x1E \x1E ---- two \x1E for seperating text and binary data
     [Optional Class Tag:] ... MessagePack binary data goes here ....
     \x1E ---- Another section
     [Optional Class Tag:] ... MessagePack binary data goes here ....
-    ```
 
 For example:
 
-    ```
     # Title
     This is a simple text.
     \x1E \x1E 
     {"user": "yarco", "image1":"data:image/png;base64,...", "image2":"data:image/png;base64,...}
     \x1E 
     Avatar:{"image1":"data:image/png;base64,"width":"200px",...}
-    ```
 
 You can reference the image in markdown as:
 
