@@ -1,52 +1,35 @@
-Markdown Enhanced Ideas
-====
-[markdown][] is original defined by John Gruber, and soon become widely used. (More detail on [markdown-wiki][]).
+# Ideas of Markdown Enhanced
+[Markdown][] is original defined by John Gruber, and soon become widely used. (more detail on [Markdown-wiki][]).  
+[Markdown-github][] add some awesome rules to enhance the writting on github.
 
-[markdown-github][] add some awesome rules to enhance the original definitions.
+When I'm using markdown, I sometimes feel it lacks some features i want. (Maybe you also have the same feelings).  
+But you know, it is widely used and you can not force others to agree with you. That's why I collect the ideas here, maybe it is useful for those developing Markdown editors.
 
-When i'm using markdown, i feel it lacks some features i want. (Maybe you also have same feelings).  
-But you know, it is widely used and you can not create another tool and make it as a standard.(Needless to say i don't know how to)
+Current ideas are listed here:  
+* [Markdown Options](#markdown-options)
+* [Markdown Chart](#markdown-chart)
+* [Enhanced Attachments: Using MessagePack](#enhanced-attachments-using-messagepack)
 
-That's why i put it here, to collect ideas to enhance markdown standard. And it is free to add more from others who would like to join. 
+## Markdown Options
+Markdown options is a way to extend markdown by external markdown engine. Let's make an example to clarify this idea.
 
-And i think it is also good to those who are developing markdown engines.
-
-Here are the ideas (from me for now):
-
-* markdown options
-* markdown chart
-
-For more details and explanations, see below.
-
-
-Markdown Options
-----
-Markdown options is a way to extend markdown by external markdown engine. Let's make an example to clarify my idea.
-
-For example, sometimes i want the markdown engine could output index version of the html for long article; but sometimes, i dont want it. So there should be an option to indicate it. My idea is using something like reference link grammar, but begin with `@`.
-
-For example:
+For example, sometimes I want the markdown engine could output the indexed version of the html for long article; but sometimes, I dont want it. So there could be an option to indicate it. My idea is using something like reference link grammar, but begin with `@`:
 
     @index: true
 
-That means i wish the external tool could create an index version pdf/html for me. But whether it can do or can not is only based on the external tool. For those don't support `@index`, just ignore it.
+That means I wish the external tool could create an indexed version pdf/html for me. But whether it can do or can not do that depends on the external tool itself. For those don't support `@index` grammar, just ignore it.
 
-And also, it may good for adding colors on elements. For example:
+Other cases, maybe it can also be used in coloring the elements. For example:
 
     @color-red: red
     @color-red: #900
 
-Then you can reference an element as red color.
+Then you can reference the element as red color.
 
     Some Title@color-red
     ----
  
-Well, this title may have red color. (whether it is background or font also based on the external engine)
-
-If you really want to write down `@` and not a reference, you could escape it just like "\\ \` \* ..." defined in original markdown grammar.
-
-Markdown Chart
-----
+## Markdown Chart
 All charts are defined just like you are writting normal code. For example:
 		
     ```js
@@ -139,17 +122,44 @@ Grammar:
 
 But attribute here can also be written as method. Just change it to `method()` or even more add `+method()` to indicate it is a static method.
 
-Contact
-----
-You may want to contact [me][] through <yarco.wang@gmail.com> according to the ideas. Programming related topics are also welcomed.
+## Enhanced Attachments: Using MessagePack
+In markdown, we can display images either using external links or data url. But it is quite limited.
 
-timezone: GMT+0800
+If the requirement is we want a all-in-one solution, the data url solution is messed up. So, my idea is using Text with MessagePack as attachement. (MessagePack itself can also be used with other Text format).
 
-[me]:http://bbish.net
+The basic format is:
 
-[markdown]:http://daringfireball.net/projects/markdown/ "original markdown"
-[markdown-wiki]:http://en.wikipedia.org/wiki/Markdown "markdown wikimedia intro"
-[markdown-github]:http://github.github.com/github-flavored-markdown/
+    ```
+    ... Here is the Text (Markdown in this case) ...
+    \x1E \x1E ---- two \x1E for seperating text and binary data
+    [Optional Class Tag:] ... MessagePack binary data goes here ....
+    \x1E ---- Another section
+    [Optional Class Tag:] ... MessagePack binary data goes here ....
+    ```
+
+For example:
+
+    ```
+    # Title
+    This is a simple text.
+    \x1E \x1E 
+    {"user": "yarco", "image1":"data:image/png;base64,...", "image2":"data:image/png;base64,...}
+    \x1E 
+    Avatar:{"image1":"data:image/png;base64,"width":"200px",...}
+    ```
+
+You can reference the image in markdown as:
+
+    ![image1](data:with/messagepack,"image1")
+
+or
+
+    ![image1](data:with/messagepack,Avatar:"image1")
+
+
+[Markdown]:http://daringfireball.net/projects/markdown/ "original markdown"
+[Markdown-wiki]:http://en.wikipedia.org/wiki/Markdown "markdown wikimedia intro"
+[Markdown-github]:https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 
 [usecase in wikimedia]:http://en.wikipedia.org/wiki/Use_Case_Diagram "usecase in wikimedia"
 [activity in wikimedia]:http://en.wikipedia.org/wiki/Activity_diagram "activity in wikimedia"
